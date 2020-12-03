@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import "../Styles/sidebar.css"
 
-import profileIcon from '../Assets/Images/background.png';
+import profileIcon from '../Assets/Images/container-bg.jpg';
 
 
 function Sidebar () {

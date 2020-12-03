@@ -7,6 +7,6 @@ form {
 input {
     width: 100%;
     padding: 22px 25px;
-    outline: none;
-    border: none;
+    outline: auto;
+    border: dodgerblue;
 }

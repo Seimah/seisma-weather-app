@@ -10,39 +10,65 @@ code {
     monospace;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 .App {
   width: 100%;
   height: 100vh;
-  background-color: bisque;
+  background-color: #D8C0A8;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .container {
   width: 1097px;
-  margin:72px;
+  margin: 72px;
   box-shadow: 2px 0px 45px -1px rgba(0, 0, 0, 0.25);
-  background-color: blanchedalmond;
+  background-color: white;
+  transition: all 2.1s ease-in;
+  animation: moveInRight 1.1s ease-in;
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(-150%) scale(0.1);
+  }
+  70% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.content {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .content .left {
   width: 70%;
   min-width: 720px;
   height: 100%;
-  padding: 98px 110px
+  padding: 98px 110px;
+  max-height: 75vh;
 }
 
-content .right {
+
+.content .right {
   width: 30%;
-  background: blue;
-  height: 100%;
+  background-image: url('./Assets/Images/container-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
   min-width: 420px;
 }
 
