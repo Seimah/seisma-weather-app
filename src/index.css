@@ -20,7 +20,7 @@ code {
 .App {
   width: 100%;
   height: 100vh;
-  background-color: #D8C0A8;
+  background-color: #f1d4b7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,10 +56,10 @@ code {
 
 .content .left {
   width: 70%;
-  min-width: 720px;
+  min-width: 500px;
   height: 100%;
-  padding: 98px 110px;
-  max-height: 75vh;
+  padding: 0px 110px;
+  max-height: 80vh;
 }
 
 
@@ -68,8 +68,8 @@ code {
   background-image: url('./Assets/Images/container-bg.jpg');
   background-size: cover;
   background-position: center;
-  height: 75vh;
-  min-width: 420px;
+  height: 80vh;
+  min-width: 400px;
 }
 
 h3 {
@@ -77,3 +77,9 @@ h3 {
   font-size: 32px;
   line-height: 37px;
 }
+
+/* #page-wrap { */
+  /* padding-bottom: 10px; */
+  /* padding-top: 10px; */
+/* } */
+

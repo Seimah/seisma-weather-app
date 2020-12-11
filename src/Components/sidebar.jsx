@@ -1,27 +1,34 @@
-import React, {useState} from 'react';
+import React from "react"
+import { slide as Menu } from "react-burger-menu"
+// import { elastic as Menu } from 'react-burger-menu'
+// import { bubble as Menu } from 'react-burger-menu'
+import'../Styles/sidebar.css'
 
-import "../Styles/sidebar.css"
+export default props => {
+  return (
+    <Menu>
+      <a className="menu-item" href="/">
+        Home
+      </a>
 
-import profileIcon from '../Assets/Images/container-bg.jpg';
+      <a className="menu-item" href="/signup">
+        Sign Up
+      </a>
 
+      <a className="menu-item" href="/login">
+        Login
+      </a>
 
-function Sidebar () {
-    const [opened, setOpened] = useState(false);
+      <a className="menu-item" href="/search">
+       Search
+      </a>
 
-    return (
-        <div className={`sidebar ${opened ? "sidebar-opened" : ""}`}>
-            <i onClick={()=> setOpened(!opened)} className="sidebar-toggler fa fa-bars fa-2x fa-2x"></i>
-            <div className={"profile-info"}>
-                <img className={"profileImg"} src={profileIcon} alt=""/>
-                <p className="name">Sandra Asantey</p>
-                <p className="email">asantey4s@gmail.com</p>
-            </div>
-            <div className={"menu-actions"}>
-
-            </div>
-        </div>
-    )
+      <a className="menu-item" href="/history">
+       History
+      </a>
+    </Menu>
+  )
 }
 
 
-export default Sidebar;
+

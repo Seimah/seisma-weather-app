@@ -1,74 +1,74 @@
-import React, {useState} from 'react'
-// import {LoginContext} from '../contexts/LoginContext'
+import React, {useState} from 'react';
+import {Link,useHistory} from 'react-router-dom'
+// import './Pages/history';
+import '../Styles/auth.css'
 
-function Signup() {
 
-    // const {setLogged} = useContext(LoginContext)
+function Signup(){
+    let redirect = useHistory();
 
-    const [user, setUser] = useState("")
-    const [pass, setPass] = useState("")
-    const [conf, setConf] = useState("")
-    const [email, setEmail] = useState("")
+    const [fname, setFname] = useState('')
+    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [cpassword, setCpassword] = useState('')
+    const [userProfile, setUserProfile] = useState({})
 
-    function Validation () {
-        
-        // // Check if password is equal to confirmation
-        // pass === conf ? 
-        // setLogged(true)
-        // : 
-        // alert("Password should be the same as confirmation")
-        
+
+    //form functions
+    const handleFullNameOnChange = (event) => {
+        setFname(event.target.value)
     }
 
-    return (
-        <div className="cully">
-            <h2>Register for an account</h2>
-            <form onSubmit={Validation}>
-                <div className="form-group">
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        onChange={(e) => setUser(e.target.value)} 
-                        value={user} 
-                        placeholder="Username"
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        onChange={(e) => setEmail(e.target.value)} 
-                        value={email} 
-                        placeholder="Email address"
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <input 
-                        type="password" 
-                        className="form-control" 
-                        onChange={(e) => setPass(e.target.value)} 
-                        value={pass} 
-                        placeholder="Password"
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <input 
-                        type="password" 
-                        className="form-control" 
-                        onChange={(e) => setConf(e.target.value)} 
-                        value={conf}
-                        placeholder="Confirm password" 
-                        required
-                    />
-                </div>
-                <button type="submit" className="btn btn-primary">Sign up</button>
-            </form>
+    const handleEmailOnChange = (event) => {
+        setEmail(event.target.value)
+    }
+
+    const handleUsernameOnChange = (event) => {
+        setUsername(event.target.value)
+    }
+
+    const handlePasswordOnChange = (event) => {
+        setPassword(event.target.value)
+    }
+
+    const handleConfirmPasswordOnChange = (event) => {
+        setCpassword(event.target.value)
+    }
+    const handleSignupOnSubmit = (event) => {
+        event.preventDefault();  //keeps page from reloading
+
+        userProfile['username'] = username
+        userProfile['email'] = email
+        userProfile['password'] = password
+        localStorage.setItem(`${username}`, JSON.stringify(userProfile))
+        console.log(localStorage)
+        alert('Sign Up Successful')
+        redirect.push('/login')
+  
+    }
+    
+    return(
+        <div className='auth'>
+        <div className='content'>
+          <div className="left">
+        <h1>Create your account here</h1>
+        <form className='auth-container' onSubmit={handleSignupOnSubmit}>
+            <input type='text' placeholder='Full Name' value={fname} onChange={handleFullNameOnChange}/>
+            <input type='text' placeholder='Username' value={username} onChange={handleUsernameOnChange}/>
+            <input type='text' placeholder='E-mail' value={email} onChange={handleEmailOnChange}/>
+            <input type='password' placeholder='Password' value={password} onChange={handlePasswordOnChange}/>
+            <input type='password' placeholder='Confirm Password' value={cpassword} onChange={handleConfirmPasswordOnChange}/>
+            <button type='submit'>Create Account</button>
+            <p>Already with an account? <Link to='/login'>Login</Link>.</p>
+        </form>
         </div>
+        <div className='right'>
+        </div>
+        </div>
+          </div>
+
     )
 }
 
-export default Signup
-
+export default Signup;

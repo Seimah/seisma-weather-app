@@ -1,59 +1,78 @@
-.sidebar {
-    position: fixed;
-    height: 100%;
-    width: 365px;
-    top: 0;
-    left: 0;
-    background-color: var(--dark-blue);
-    box-shadow: var(--shadow);
-    z-index: 99;
-    transform: translateX(-80%);
-    transition: transform 0.2s cubic-bezier(.57,.21,.69,1.25);
-    /*border-right: 5px solid white;*/
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
 }
 
-.sidebar-opened {
-    transform: translateX(0%);
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #16191d;
 }
 
-.sidebar-toggler {
-    position: absolute;
-    right: 10px;
-    color: white;
-    padding: 15px;
-    /*border-radius: 50%;*/
-    cursor: pointer;
-    transition: all 0.2s ease-out;
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #070707;
 }
 
-.sidebar-toggler:hover {
-    background-color: var(--light-brown);
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
 }
 
-/* Profile */
-.profile-info {
-    width: 100%;
-    /*height: 500px;*/
-    /*border: 1px solid #000;*/
-    margin-top: 98px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color: white;
+/* Color/shape of close button cross */
+/* .bm-cross { */
+  /* background: #bdc3c7; */
+/* } */
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
 }
 
-.profile-info .name {
-    font-size: 22px;
-    font-weight: 500;
+/* General sidebar styles */
+.bm-menu {
+  background: #000005;
+  padding: 2.5em 0em 0;
+  font-size: 1.15em;
+  width: fit-content;
+  height: max-content;
 }
 
-.profile-info .email {
-    font-size: 14px;
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #9d9db1;
 }
 
-.profileImg {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 15px;
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+
+  color: #d1d1d1;
+  margin-bottom: 10px;
+  text-align: left;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: #ffffff;
 }
