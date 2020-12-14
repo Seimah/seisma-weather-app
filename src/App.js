@@ -21,10 +21,11 @@ export const AppContext = React.createContext()
 function App() {
 
     const [isLoading, setIsLoading] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     
     return (
        
-       <AppContext.Provider value={{isLoading, setIsLoading}}>
+       <AppContext.Provider value={{isLoading, setIsLoading, isLoggedIn, setIsLoggedIn}}>
             <div className="App">
                 <Sidebar/>
                 {/* <Sidebar items={items} /> */}

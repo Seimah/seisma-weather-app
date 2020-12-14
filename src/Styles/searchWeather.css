@@ -1,31 +1,48 @@
 form { 
     width: 80%;
-    display: flex;
-    align-items: center;
-    padding-top: 200px;
+    /* display: flex; */
+    /* align-items: center; */
+    padding-top: 100px;
 } 
 
-input {
+.description {
+    width: 80%;
     font-size: large;
-    border: 1px solid #EEEEEE;
-    padding: 5px;
+    padding: 30px, 25px;
     border-radius: 3px;
     display: flex;
     margin: 5px;
     align-items: center;
 }
 
-.button {
-    margin: 10px auto;
-    padding: .5rem;
-    font-size: 1em;
-    background: darkcyan;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    margin: 5px auto;
+.currentWeatherInfo {
+    padding: 10px 0 20px;
     display: flex;
+    padding-top: 200;
 }
+
+.temp {
+    font-size: 96px;
+    font-weight: 200;
+    margin-right: 0px;
+}
+
+/* .auto {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    height: 100px;
+    width: 100px;
+} */
+
+
+
+
+
+
+
+
+
+
 
 
 

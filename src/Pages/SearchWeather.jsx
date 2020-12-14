@@ -76,34 +76,27 @@ function Searchweather() {
             <div className='content'>
                 <div className='left'>
                     <form onSubmit={searchWeather}>
-                    {/* <input type='text' placeholder='Enter City' value={searchQuery} onChange={handleSearchQueryOnChange} /> */}
+                    <h3>{current_date}</h3>
+                        <h4>{current_time}</h4>
                         <input value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onChange={handleSearchQueryOnChange} placeholder = 'Enter city'/>
                         <button type='submit' className="btn btn-primary">Search city</button>
+                        <p className="temp">{searchResponses.main ? toCelsius(searchResponses.main.temp) : ""}&deg;</p>
+                            <img src={`http://openweathermap.org/img/wn/${searchResponses.weather ? searchResponses.weather[0].icon : '10d'}@2x.png`} alt='Weather Icon'/>
+                            <span>City: {searchResponses.name ? searchResponses.name : ''}, {searchResponses.sys ? searchResponses.sys.country : ''}</span>
+                            <p>Humidity: {searchResponses.main ? searchResponses.main.humidity : ""}%</p>
+                            <p>Pressure: {searchResponses.main ? searchResponses.main.pressure : ""}hPa</p>       
                     </form>
                     {app_context.isLoggedIn ? <p><Link to='/history' id='auth-link'>Search History</Link></p>:''}
                    
                     <p className="description">Current Weather Condition: {searchResponses.weather ? searchResponses.weather[0].description : ""}</p>
                     </div>
 
-                    {/* <div className="left"> */}
-                        {/* <h3>{current_date}</h3> */}
-                        {/* <h4>{current_time}</h4> */}
-                        <div className="currentWeatherInfo">
-                            <p className="temp">{searchResponses.main ? toCelsius(searchResponses.main.temp) : ""}&deg;</p>
-                            <img src={`http://openweathermap.org/img/wn/${searchResponses.weather ? searchResponses.weather[0].icon : '10d'}@2x.png`} alt='Weather Icon'/>
-                        </div>
-                       
-                    <span>City: {searchResponses.name ? searchResponses.name : ''}, {searchResponses.sys ? searchResponses.sys.country : ''}</span>
-                        <div className='col-7'>
-                            <p>Humidity: {searchResponses.main ? searchResponses.main.humidity : ""}%</p>
-                            <p>Pressure: {searchResponses.main ? searchResponses.main.pressure : ""}hPa</p>
-                        </div>
-
-                        <div className='right'>
-                 {/* </div> */}
+                    <div className="right">
+                    </div>
+                
                     </div> 
                 </div>
-            </div>
+            
                 
         
     
